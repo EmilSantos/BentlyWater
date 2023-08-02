@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-sm-8">
+  	<h1>Properties</h1>
+  </div>
+  <div class="col-sm-4">
+  	<button type="button" class="btn text-light btn-warning" data-toggle="modal" data-target="#exampleModal">
+	  + Add Property
+	</button>
+
+	{{ test }}
+  </div>
+	}
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-white bg-dark">
+        <h3 class="modal-title" id="exampleModalLabel">Add Property</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body bg-light">
+      	<form>
+      	  <h3 class="text-dark">Permit Information</h3>
+      	  <div class="form-row">
+		    <div class="form-group text-secondary col-md-6">
+		      <label for="inputState">Basin</label>
+		      <select id="inputState" class="form-control">
+		        <option selected>Choose...</option>
+		        <option>Lake Tahoe Basin (90)</option>
+		        <option>Dayton Valley (103)</option>
+		        <option>Carson Valley (105)</option>
+		        <option>Antelope Valley (106)</option>
+		      </select>
+		    </div>
+		    <div class="form-group text-secondary col-md-6">
+		      <label for="inputPassword4">Owner of Record</label>
+		      <input type="password" class="form-control" id="inputPassword4" placeholder="">
+		    </div>
+		  </div>
+		  <div class="form-row">
+		    <div class="form-group text-secondary col-md-4">
+		      <label for="inputEmail4">Permit Number</label>
+		      <input type="email" class="form-control" id="inputEmail4" placeholder="">
+		    </div>
+		    <div class="form-group text-secondary col-md-4">
+		      <label for="inputPassword4">Certification/Status</label>
+		      <input type="password" class="form-control" id="inputPassword4" placeholder="">
+		    </div>
+		    <div class="form-group text-secondary col-md-4">
+		      <label for="inputCity">Priority Date</label>
+		      <input type="text" class="form-control" id="inputCity">
+		    </div>
+		  </div>
+		  <br/>
+		  <h3 class="text-dark">Point of Diversion</h3>
+		  <div class="form-row">
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputCity">1/4</label>
+		      <input type="text" class="form-control" id="inputCity">
+		    </div>
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputCity">1/4</label>
+		      <input type="text" class="form-control" id="inputCity">
+		    </div>
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputCity">S</label>
+		      <input type="text" class="form-control" id="inputCity">
+		    </div>
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputCity">T(N)</label>
+		      <input type="text" class="form-control" id="inputCity">
+		    </div>
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputCity">R</label>
+		      <input type="text" class="form-control" id="inputCity">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		  </div>
+		</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-warning">Add Property</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
