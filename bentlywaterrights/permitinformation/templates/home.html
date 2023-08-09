@@ -3,37 +3,94 @@
 {% block content %}
 
 <div class="row">
-  <div class="col-sm-8">
+  <div class="col-sm-8" style="">
   	<h1>Properties</h1>
-  </div>
-  <div class="col-sm-4">
-  	<button type="button" class="btn text-light btn-warning" data-toggle="modal" data-target="#exampleModal">
-	  + Add Property
-	</button>
+  	<br/>
 
-	{{ test }}
+<!--<div class="shadow-sm p-3 mb-5 bg-white rounded"> -->
+<table class="table table-striped table-hover table-sm rounded shadow-lg bordered rounded">
+
+  <thead class="thead-dark">
+    <!-- <tr class="d-flex"> -->
+    <tr class="">
+      <th class="col-2">Permit #</th>
+      <th class="col-4">Basin</th>
+      <th class="col-4">Owner</th>
+      <th class="col-2">Cert./Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  {% for item in ticker %}
+    <tr class="">
+      <th class="col-2">{{ item.permit_num }}</th>
+      <th class="col-4">{{ item.basin }}</th>
+      <th class="col-4">{{ item.owner_of_record }}</th>
+      <th class="col-2">{{ item.cert_status }}</th>
+    </tr>
+  <!--{{ item }} | <a href="{% url 'deleteProperty' item.id %}">Delete Property</a> <br/>-->
+  {% endfor %}
+  </tbody>
+
+</table>
+<!-- </div> -->
   </div>
-	}
+
+<div class="container col-sm-4" style="">
+  <div class="row align-items-start">
+    <div class="col-2"></div>
+
+    <div class="col-12">
+    	<button type="button" class="btn text-light btn-warning btn-lg shadow rounded" data-toggle="modal" data-target="#exampleModal">
+	  		+ Add Property
+		</button><br/><br/>
+		<h3>Property Information</h3>
+		Permit #:<br/>
+		Cert./Status:<br/>
+		Basin:<br/>
+		Owner of Record:<br/>
+		Priority Date:<br/>
+		Point of Diversion:<br/>
+		C.F.S.:<br/>
+		Duty(AF):<br/>
+		Acres/Units:<br/>
+		POC Due:<br/>
+		PBU Due:<br/>
+		Use:<br/>
+		Source:<br/>
+		Source Description:<br/>
+		Remarks:<br/>
+		Sale Value:<br/>
+		Potential Values:<br/>
+    </div>
+	<br/>
+
+  </div>
 </div>
-
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
+
       <div class="modal-header text-white bg-dark">
         <h3 class="modal-title" id="exampleModalLabel">Add Property</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body bg-light">
-      	<form>
+
+      	<!-- Form -->
+      	<form action="{% url 'home' %}" method="POST">
+      		{% csrf_token %}
       	  <h3 class="text-dark">Permit Information</h3>
+
       	  <div class="form-row">
 		    <div class="form-group text-secondary col-md-6">
-		      <label for="inputState">Basin</label>
-		      <select id="inputState" class="form-control">
+		      <label for="inputBasin">Basin</label>
+		      <select id="inputBasin" class="form-control" name="basin">
 		        <option selected>Choose...</option>
 		        <option>Lake Tahoe Basin (90)</option>
 		        <option>Dayton Valley (103)</option>
@@ -42,56 +99,139 @@
 		      </select>
 		    </div>
 		    <div class="form-group text-secondary col-md-6">
-		      <label for="inputPassword4">Owner of Record</label>
-		      <input type="password" class="form-control" id="inputPassword4" placeholder="">
+		      <label for="inputOwner">Owner of Record</label>
+		      <input type="text" class="form-control" id="inputOwner" name="owner_of_record">
 		    </div>
 		  </div>
+
 		  <div class="form-row">
 		    <div class="form-group text-secondary col-md-4">
-		      <label for="inputEmail4">Permit Number</label>
-		      <input type="email" class="form-control" id="inputEmail4" placeholder="">
+		      <label for="inputPermitNum">Permit Number</label>
+		      <input type="text" class="form-control" id="inputPermitNum" name="permit_num">
 		    </div>
 		    <div class="form-group text-secondary col-md-4">
-		      <label for="inputPassword4">Certification/Status</label>
-		      <input type="password" class="form-control" id="inputPassword4" placeholder="">
+		      <label for="inputCert">Certification/Status</label>
+		      <input type="text" class="form-control" id="inputCert" name="cert_status">
 		    </div>
 		    <div class="form-group text-secondary col-md-4">
-		      <label for="inputCity">Priority Date</label>
-		      <input type="text" class="form-control" id="inputCity">
+		      <label for="inputPriorityDate">Priority Date</label>
+		      <input type="text" class="form-control" id="inputPriorityDate" name="priority_date">
 		    </div>
 		  </div>
+
 		  <br/>
 		  <h3 class="text-dark">Point of Diversion</h3>
 		  <div class="form-row">
 		    <div class="form-group text-secondary col-md-2">
-		      <label for="inputCity">1/4</label>
-		      <input type="text" class="form-control" id="inputCity">
+		      <label for="inputPod1">1/4</label>
+		      <input type="text" class="form-control" id="inputPod1" name="pod_1">
 		    </div>
 		    <div class="form-group text-secondary col-md-2">
-		      <label for="inputCity">1/4</label>
-		      <input type="text" class="form-control" id="inputCity">
+		      <label for="inputPod2">1/4</label>
+		      <input type="text" class="form-control" id="inputPod2" name="pod_2">
 		    </div>
 		    <div class="form-group text-secondary col-md-2">
-		      <label for="inputCity">S</label>
-		      <input type="text" class="form-control" id="inputCity">
+		      <label for="inputPod3">S</label>
+		      <input type="text" class="form-control" id="inputPod3" name="pod_3">
 		    </div>
 		    <div class="form-group text-secondary col-md-2">
-		      <label for="inputCity">T(N)</label>
-		      <input type="text" class="form-control" id="inputCity">
+		      <label for="inputPod4">T(N)</label>
+		      <input type="text" class="form-control" id="inputPod4" name="pod_4">
 		    </div>
 		    <div class="form-group text-secondary col-md-2">
-		      <label for="inputCity">R</label>
-		      <input type="text" class="form-control" id="inputCity">
+		      <label for="inputPod5">R</label>
+		      <input type="text" class="form-control" id="inputPod5" name="pod_5">
 		    </div>
 		  </div>
-		  <div class="form-group">
+		  <br/>
+		  <h3 class="text-dark">Acres/Units</h3>
+		  <div class="form-row">
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputAcres">Acres</label>
+		      <input type="text" class="form-control" id="inputAcres" name="unit_acres">
+		    </div>
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputSheep">Sheep</label>
+		      <input type="text" class="form-control" id="inputSheep" name="unit_sheep">
+		    </div>
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputLamb">Lamb</label>
+		      <input type="text" class="form-control" id="inputLamb" name="unit_lamb">
+		    </div>
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputCattle">Cattle</label>
+		      <input type="text" class="form-control" id="inputCattle" name="unit_cattle">
+		    </div>
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputHorses">Horses</label>
+		      <input type="text" class="form-control" id="inputHorses" name="unit_horses">
+		    </div>
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputOther">Other</label>
+		      <input type="text" class="form-control" id="inputOther" name="unit_other">
+		    </div>
 		  </div>
-		</form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-warning">Add Property</button>
-      </div>
+
+		  <br/>
+		  <h3 class="text-dark">More Info</h3>
+		  <div class="form-row">
+		    <div class="form-group text-secondary col-md-3">
+		      <label for="inputCFS">C.F.S.</label>
+		      <input type="text" class="form-control" id="inputCFS" name="cfs">
+		    </div>
+		    <div class="form-group text-secondary col-md-3">
+		      <label for="inputDuty">Duty (AF)</label>
+		      <input type="text" class="form-control" id="inputDuty" name="duty_af">
+		    </div>
+		    <div class="form-group text-secondary col-md-3">
+		      <label for="inputPOCDue">POC Due</label>
+		      <input type="text" class="form-control" id="inputPOCDue" name="poc_due">
+		    </div>
+		    <div class="form-group text-secondary col-md-3">
+		      <label for="inputPBUDue">PBU Due</label>
+		      <input type="text" class="form-control" id="inputPBUDue" name="pbu_due">
+		    </div>
+		  </div>
+
+		  <div class="form-row">
+		    <div class="form-group text-secondary col-md-4">
+		      <label for="inputUse">Use</label>
+		      <input type="text" class="form-control" id="inputUse" name="use">
+		    </div>
+		    <div class="form-group text-secondary col-md-4">
+		      <label for="inputSource">Source</label>
+		      <input type="text" class="form-control" id="inputSource" name="source">
+		    </div>
+		    <div class="form-group text-secondary col-md-4">
+		      <label for="inputSourceDesc">Source Description</label>
+		      <input type="text" class="form-control" id="inputSourceDesc" name="source_description">
+		    </div>
+		  </div>
+
+		  <div class="form-row">
+		    <div class="form-group text-secondary col-md-6">
+		      <label for="inputRemarks">Remarks</label>
+		      <input type="text" class="form-control" id="inputRemarks" name="remarks">
+		    </div>
+		    <div class="form-group text-secondary col-md-6">
+		      <label for="inputSaleValue">Sale Value</label>
+		      <input type="text" class="form-control" id="inputSaleValue" name="sale_value">
+		    </div>
+		  </div>
+
+		  <div class="form-row">
+		    <div class="form-group text-secondary col-md-12">
+		      <label for="inputPotVal">Potential Values</label>
+		      <input type="text" class="form-control" id="inputPotVal" name="potential_values">
+		    </div>
+		  </div>
+
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button class="btn btn-warning" type="submit">Add Property</button>
+	      </div>
+      	</form>
     </div>
   </div>
 </div>

@@ -5,4 +5,5 @@ urlpatterns = [
 	path('', views.home, name="home"),
 	path('logbook.html', views.logbook, name="logbook"),
 	path('about.html', views.about, name="about"),
+	path('delete/<property_id>', views.deleteProperty, name="deleteProperty")
 ]
