@@ -7,8 +7,7 @@
   	<h1>Properties</h1>
   	<br/>
 
-<!--<div class="shadow-sm p-3 mb-5 bg-white rounded"> -->
-<table class="table table-striped table-hover table-sm rounded shadow-lg bordered rounded">
+<table class="table table-striped table-hover table-sm bordered">
 
   <thead class="thead-dark">
     <!-- <tr class="d-flex"> -->
@@ -22,26 +21,24 @@
 
   <tbody>
   {% for item in ticker %}
-    <tr class="">
+    <tr class="clickable-row" data-href="{% url 'deleteProperty' item.id %}">
       <th class="col-2">{{ item.permit_num }}</th>
       <th class="col-4">{{ item.basin }}</th>
       <th class="col-4">{{ item.owner_of_record }}</th>
       <th class="col-2">{{ item.cert_status }}</th>
     </tr>
-  <!--{{ item }} | <a href="{% url 'deleteProperty' item.id %}">Delete Property</a> <br/>-->
+    <!--{{ item }} | <a href="{% url 'deleteProperty' item.id %}">Delete Property</a> <br/>-->
   {% endfor %}
   </tbody>
 
 </table>
-<!-- </div> -->
   </div>
 
 <div class="container col-sm-4" style="">
   <div class="row align-items-start">
-    <div class="col-2"></div>
 
     <div class="col-12">
-    	<button type="button" class="btn text-light btn-warning btn-lg shadow rounded" data-toggle="modal" data-target="#exampleModal">
+    	<button type="button" class="btn text-light btn-warning btn-lg rounded" data-toggle="modal" data-target="#exampleModal">
 	  		+ Add Property
 		</button><br/><br/>
 		<h3>Property Information</h3>

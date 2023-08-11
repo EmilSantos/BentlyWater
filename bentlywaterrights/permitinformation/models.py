@@ -44,8 +44,6 @@ class Property(models.Model):
 		verbose_name_plural = "Properties"
 
 
-
-
 """
 basin
 owner_of_record
