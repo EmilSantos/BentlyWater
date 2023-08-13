@@ -1,64 +1,60 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
 <div class="row">
-  <div class="col-sm-8" style="">
-  	<h1>Properties</h1>
+<div class="col-sm-8" style="">
+ 	<h1>Properties</h1>
   	<br/>
 
-<table class="table table-striped table-hover table-sm bordered">
+  	<!-- PROPERTY LIST TABLE -->
+	<table class="table table-hover table-sm">
+  		<thead class="thead-dark">
+    	<tr class="">
+      		<th class="col-2">Permit #</th>
+      		<th class="col-4">Basin</th>
+      		<th class="col-4">Owner</th>
+      		<th class="col-2">Cert./Status</th>
+    	</tr>
+  	</thead>
 
-  <thead class="thead-dark">
-    <!-- <tr class="d-flex"> -->
-    <tr class="">
-      <th class="col-2">Permit #</th>
-      <th class="col-4">Basin</th>
-      <th class="col-4">Owner</th>
-      <th class="col-2">Cert./Status</th>
+  	<tbody>
+	{% for item in ticker %}
+    <tr class="clickable-row" data-href="{% url 'get_property_details' item.id %}">
+        <th class="col-2">{{ item.permit_num }}</th>
+        <th class="col-4">{{ item.basin }}</th>
+        <th class="col-4">{{ item.owner_of_record }}</th>
+        <th class="col-2">{{ item.cert_status }}</th>
     </tr>
-  </thead>
+	{% endfor %}
+	</tbody>
 
-  <tbody>
-  {% for item in ticker %}
-    <tr class="clickable-row" data-href="{% url 'deleteProperty' item.id %}">
-      <th class="col-2">{{ item.permit_num }}</th>
-      <th class="col-4">{{ item.basin }}</th>
-      <th class="col-4">{{ item.owner_of_record }}</th>
-      <th class="col-2">{{ item.cert_status }}</th>
-    </tr>
-    <!--{{ item }} | <a href="{% url 'deleteProperty' item.id %}">Delete Property</a> <br/>-->
-  {% endfor %}
-  </tbody>
-
-</table>
-  </div>
+	</table>
+</div>
 
 <div class="container col-sm-4" style="">
   <div class="row align-items-start">
-
     <div class="col-12">
     	<button type="button" class="btn text-light btn-warning btn-lg rounded" data-toggle="modal" data-target="#exampleModal">
 	  		+ Add Property
 		</button><br/><br/>
-		<h3>Property Information</h3>
-		Permit #:<br/>
-		Cert./Status:<br/>
-		Basin:<br/>
-		Owner of Record:<br/>
-		Priority Date:<br/>
-		Point of Diversion:<br/>
-		C.F.S.:<br/>
-		Duty(AF):<br/>
-		Acres/Units:<br/>
-		POC Due:<br/>
-		PBU Due:<br/>
-		Use:<br/>
-		Source:<br/>
-		Source Description:<br/>
-		Remarks:<br/>
-		Sale Value:<br/>
-		Potential Values:<br/>
+		<p class="text-primary"><strong>Property Information</strong></p>
+		Cert./Status: <span id="detail_cert_status"></span><br/>
+		Basin: <span id="detail_basin"></span><br/>
+		Owner of Record: <span id="detail_owner"></span><br/>
+		Permit #: <span id="detail_permit"></span><br/><br/>
+		Priority Date: <br/>
+		Point of Diversion: <br/>
+		C.F.S.: <br/>
+		Duty(AF): <br/>
+		Acres/Units: <br/>
+		POC Due: <br/>
+		PBU Due: <br/>
+		Use: <br/>
+		Source: <br/>
+		Source Description: <br/>
+		Remarks: <br/>
+		Sale Value: <br/>
+		Potential Values: <br/>
     </div>
 	<br/>
 
