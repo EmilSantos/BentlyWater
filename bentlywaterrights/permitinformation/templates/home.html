@@ -3,58 +3,71 @@
 
 <div class="row">
 <div class="col-sm-8" style="">
- 	<h1>Properties</h1>
-  	<br/>
+  <h1>Properties</h1>
+  <br/>
 
-  	<!-- PROPERTY LIST TABLE -->
-	<table class="table table-hover table-sm">
-  		<thead class="thead-dark">
-    	<tr class="">
-      		<th class="col-2">Permit #</th>
-      		<th class="col-4">Basin</th>
-      		<th class="col-4">Owner</th>
-      		<th class="col-2">Cert./Status</th>
-    	</tr>
+  <!-- PROPERTY LIST TABLE -->
+  <div class="bdr">
+  <table class="table table-hover table-sm">
+    <thead class="thead-dark">
+      <tr class="">
+        <th class="col-2">Permit #</th>
+        <th class="col-4">Basin</th>
+        <th class="col-4">Owner</th>
+        <th class="col-2">Cert./Status</th>
+      </tr>
   	</thead>
 
-  	<tbody>
-	{% for item in ticker %}
-    <tr class="clickable-row" data-href="{% url 'get_property_details' item.id %}">
+    <tbody>
+    {% for item in ticker %}
+      <tr class="clickable-row" data-href="{% url 'getPropertyDetails' item.id %}">
         <th class="col-2">{{ item.permit_num }}</th>
         <th class="col-4">{{ item.basin }}</th>
         <th class="col-4">{{ item.owner_of_record }}</th>
         <th class="col-2">{{ item.cert_status }}</th>
-    </tr>
-	{% endfor %}
-	</tbody>
-
-	</table>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
 </div>
 
 <div class="container col-sm-4" style="">
   <div class="row align-items-start">
     <div class="col-12">
-    	<button type="button" class="btn text-light btn-warning btn-lg rounded" data-toggle="modal" data-target="#exampleModal">
+    	<button type="button" class="btn text-light btn-warning btn-lg rounded" data-toggle="modal" data-target="#exampleModal" style="background-color: #D4AC0D;">
 	  		+ Add Property
 		</button><br/><br/>
-		<p class="text-primary"><strong>Property Information</strong></p>
-		Cert./Status: <span id="detail_cert_status"></span><br/>
-		Basin: <span id="detail_basin"></span><br/>
-		Owner of Record: <span id="detail_owner"></span><br/>
-		Permit #: <span id="detail_permit"></span><br/><br/>
-		Priority Date: <br/>
-		Point of Diversion: <br/>
-		C.F.S.: <br/>
-		Duty(AF): <br/>
-		Acres/Units: <br/>
-		POC Due: <br/>
-		PBU Due: <br/>
-		Use: <br/>
-		Source: <br/>
-		Source Description: <br/>
-		Remarks: <br/>
-		Sale Value: <br/>
-		Potential Values: <br/>
+
+<div class="property-label">PROPERTY INFORMATION</div>
+<span class="label">Permit #:</span> <span class="property-label-info" id="detail_permit"></span><br/>
+<span class="label">Basin:</span> <span class="property-label-info" id="detail_basin"></span><br/>
+<span class="label">Owner of Record:</span> <span class="property-label-info" id="detail_owner"></span><br/>
+<span class="label">Priority Date:</span> <span class="property-label-info" id="detail_priority_date"></span><br/>
+<span class="label">Cert./Status:</span> <span class="property-label-info" id="detail_cert_status"></span><br/>
+<span class="label">C.F.S.:</span> <span class="property-label-info" id="detail_cert_status"></span><br/>
+<span class="label">Duty(AF):</span> <span class="property-label-info" id="detail_basin"></span><br/>
+<span class="label">POC Due:</span> <span class="property-label-info" id="detail_owner"></span><br/>
+<span class="label">PBU Due:</span> <span class="property-label-info" id="detail_permit"></span><br/>
+
+<span class="label">Use:</span> <span class="property-label-info" id="detail_use"></span><br/>
+<span class="label">Source:</span> <span class="property-label-info" id="detail_source"></span><br/>
+<span class="label">Source Description:</span> <span class="property-label-info" id="detail_source_description"></span><br/>
+<span class="label">Remarks:</span> <span class="property-label-info" id="detail_remarks"></span><br/>
+<span class="label">Sale Value:</span> <span class="property-label-info" id="detail_sale_value"></span><br/>
+<span class="label">Potential Values:</span> <span class="property-label-info" id="detail_permit"></span><br/>
+
+
+<div class="property-label">CHANGE LOG</div>
+<span class="label">Created By:</span> <span class="property-label-info" id="detail_created_by"></span><br/>
+<span class="label">Create Date:</span> <span class="property-label-info" id="detail_create_date"></span><br/>
+<span class="label">Modified By:</span> <span class="property-label-info" id="detail_modified_by"></span><br/>
+<span class="label">Modify Date:</span> <span class="property-label-info" id="detail_modify_date"></span><br/>
+
+<div class="property-label">ACRES/UNITS</div>
+<div class="property-label">POINT OF DIVERSION</div>
+
+
     </div>
 	<br/>
 

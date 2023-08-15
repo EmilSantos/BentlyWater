@@ -24,13 +24,14 @@ def deleteProperty(request, property_id):
 	messages.success(request, ("Property has been deleted"))
 	return redirect('home')
 
-def get_property_details(request, property_id):
+def getPropertyDetails(request, property_id):
     item = Property.objects.get(pk=property_id)
 
     details = {
         'permit_num': item.permit_num,
         'basin': item.basin,
         'cert_status': item.cert_status,
+        'owner_of_record': item.owner_of_record,
     }
     return JsonResponse(details)
 

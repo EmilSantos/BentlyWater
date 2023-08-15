@@ -1,0 +1,41 @@
+td a, th a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit;  /* To keep text color consistent */
+}
+
+a:hover {
+	text-decoration: none;
+	color: inherit;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #d6d8d9;
+}
+
+.selected-row {
+    background-color: #b0b3b5 !important; /* Choose a light color to indicate selection */
+}
+
+.property-label {
+	color: #1F618D;
+    font-weight: 600;
+	padding-top: 20px;
+	font-size: 12px;
+}
+
+.label {
+    font-weight: 600;
+	font-size: 12px;
+}
+
+.property-label-info {
+	font-weight: lighter;
+	font-size: 12px;
+}
+
+.bdr {
+  border-radius: 3px;
+  overflow: hidden;
+}
