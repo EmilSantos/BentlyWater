@@ -235,7 +235,7 @@
 		<br/>
 	<div class="location-label">History</div>
 	{% for log in item.audit_logs.all %}
-    <div>
+    <div style="font-size: 12px">
         {{ log.field_name }}: {{ log.user.username|default:"No User" }} - 
         <!-- (Old Value: {{ log.old_value }} -> New Value: {{ log.new_value }}) -->
         {{ log.changed_at|date:"m/d/Y" }}
@@ -278,15 +278,15 @@
 		    </div>
 		    <div class="form-group text-secondary col-lg-3">
 		      <label for="inputOwner">Owner of Record</label>
-		      <input type="text" class="form-control" id="inputOwner" value="{{ item.owner_of_record|default:'' }}" name="owner_of_record">
+		      <input type="text" class="form-control" id="inputOwner" maxlength="50" value="{{ item.owner_of_record|default:'' }}" name="owner_of_record">
 		    </div>
 		    <div class="form-group text-secondary col-lg-3">
 		      <label for="inputPermitNum">Permit Number</label>
-		      <input type="text" class="form-control" id="inputPermitNum" value="{{ item.permit_num|default:'' }}" name="permit_num">
+		      <input type="text" class="form-control" id="inputPermitNum" maxlength="20" value="{{ item.permit_num|default:'' }}" name="permit_num">
 		    </div>
 		    <div class="form-group text-secondary col-lg-3">
 		      <label for="inputCert">Certification/Status</label>
-		      <input type="text" class="form-control" id="inputCert" value="{{ item.cert_status|default:'' }}" name="cert_status">
+		      <input type="text" class="form-control" id="inputCert" maxlength="20" value="{{ item.cert_status|default:'' }}" name="cert_status">
 		    </div>
 		  </div>
 
@@ -298,19 +298,19 @@
 		    </div>
 		    <div class="form-group text-secondary col-lg-2">
 		      <label for="inputCFS">C.F.S.</label>
-		      <input type="text" class="form-control" id="inputCFS" value="{{ item.cfs|default:'' }}" name="cfs">
+		      <input type="text" class="form-control" id="inputCFS" maxlength="20" value="{{ item.cfs|default:'' }}" name="cfs">
 		    </div>
 		    <div class="form-group text-secondary col-lg-2">
 		      <label for="inputDuty">Duty (AF)</label>
-		      <input type="text" class="form-control" id="inputDuty" value="{{ item.duty_af|default:'' }}" name="duty_af">
+		      <input type="text" class="form-control" id="inputDuty" maxlength="20" value="{{ item.duty_af|default:'' }}" name="duty_af">
 		    </div>
 		    <div class="form-group text-secondary col-lg-2">
 		      <label for="inputUse">Use</label>
-		      <input type="text" class="form-control" id="inputUse" value="{{ item.use|default:'' }}" name="use">
+		      <input type="text" class="form-control" id="inputUse" maxlength="10" value="{{ item.use|default:'' }}" name="use">
 		    </div>
 		    <div class="form-group text-secondary col-lg-3">
 		      <label for="inputRemarks">Remarks</label>
-		      <input type="text" class="form-control" id="inputRemarks" value="{{ item.remarks|default:'' }}" name="remarks">
+		      <input type="text" class="form-control" id="inputRemarks" maxlength="150" value="{{ item.remarks|default:'' }}" name="remarks">
 		    </div>
 		  </div>
 
@@ -325,25 +325,25 @@
 		    </div>
 		    <div class="form-group text-secondary col-md-2">
 		      <label for="inputSource">Source</label>
-		      <input type="text" class="form-control" id="inputSource" value="{{ item.source|default:'' }}" name="source">
+		      <input type="text" class="form-control" id="inputSource" value="{{ item.source|default:'' }}" maxlength="10" name="source">
 		    </div>
 		    <div class="form-group text-secondary col-md-4">
 		      <label for="inputSourceDesc">Source Description</label>
-		      <input type="text" class="form-control" id="inputSourceDesc" value="{{ item.source_description|default:'' }}" name="source_description">
+		      <input type="text" class="form-control" id="inputSourceDesc" value="{{ item.source_description|default:'' }}" maxlength="50" name="source_description">
 		    </div>
 		  </div>
 
 		  <div class="form-row">
 		    <div class="form-group text-secondary col-lg-12">
 		      <label for="inputSaleValue">Sale Value</label>
-		      <input type="text" class="form-control" id="inputSaleValue" value="{{ item.sale_value|default:'' }}" name="sale_value">
+		      <input type="text" class="form-control" id="inputSaleValue" value="{{ item.sale_value|default:'' }}" maxlength="150" name="sale_value">
 		    </div>
 		  </div>
 
 		  <div class="form-row">
 		    <div class="form-group text-secondary col-lg-12">
 		      <label for="inputPotVal">Potential Values</label>
-		      <input type="text" class="form-control" id="inputPotVal" value="{{ item.potential_values|default:'' }}" name="potential_values">
+		      <input type="text" class="form-control" id="inputPotVal" value="{{ item.potential_values|default:'' }}" maxlength="150" name="potential_values">
 		    </div>
 		  </div>
 
@@ -352,23 +352,23 @@
 		  <div class="form-row">
 		    <div class="form-group text-secondary col-md-2">
 		      <label for="inputPod1">1/4</label>
-		      <input type="text" class="form-control" id="inputPod1" value="{{ item.pod_1|default:'' }}" name="pod_1">
+		      <input type="text" class="form-control" id="inputPod1" value="{{ item.pod_1|default:'' }}" maxlength="10" name="pod_1">
 		    </div>
 		    <div class="form-group text-secondary col-md-2">
 		      <label for="inputPod2">1/4</label>
-		      <input type="text" class="form-control" id="inputPod2" value="{{ item.pod_2|default:'' }}" name="pod_2">
+		      <input type="text" class="form-control" id="inputPod2" value="{{ item.pod_2|default:'' }}" maxlength="10" name="pod_2">
 		    </div>
 		    <div class="form-group text-secondary col-md-2">
 		      <label for="inputPod3">S</label>
-		      <input type="text" class="form-control" id="inputPod3" value="{{ item.pod_3|default:'' }}" name="pod_3">
+		      <input type="text" class="form-control" id="inputPod3" value="{{ item.pod_3|default:'' }}" maxlength="10" name="pod_3">
 		    </div>
 		    <div class="form-group text-secondary col-md-2">
 		      <label for="inputPod4">T(N)</label>
-		      <input type="text" class="form-control" id="inputPod4" value="{{ item.pod_4|default:'' }}" name="pod_4">
+		      <input type="text" class="form-control" id="inputPod4" value="{{ item.pod_4|default:'' }}" maxlength="10" name="pod_4">
 		    </div>
 		    <div class="form-group text-secondary col-md-2">
 		      <label for="inputPod5">R</label>
-		      <input type="text" class="form-control" id="inputPod5" value="{{ item.pod_5|default:'' }}" name="pod_5">
+		      <input type="text" class="form-control" id="inputPod5" value="{{ item.pod_5|default:'' }}" maxlength="10" name="pod_5">
 		    </div>
 		  </div>
 		  <br/>
