@@ -53,6 +53,30 @@ $(document).ready(function() {
     });
 });
 
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    let clickableRows = document.querySelectorAll(".clickable-row");
+
+    clickableRows.forEach(row => {
+        row.addEventListener("click", function() {
+            let url = this.getAttribute("data-href");
+            if (url) {
+                window.location.href = url;
+            }
+        });
+    });
+});
+
+
+$(document).ready(function(){
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 3000);
+});
+
 /**
 basin = models.CharField('Basin', max_length=50)
     owner_of_record = models.CharField('Owner of Record', max_length=50)

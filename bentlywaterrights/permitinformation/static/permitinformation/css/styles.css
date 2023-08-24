@@ -5,6 +5,19 @@ td a, th a {
     color: inherit;  /* To keep text color consistent */
 }
 
+.clickable-row:hover {
+    cursor: pointer;
+}
+
+.table > tbody > tr {
+    border-top: none !important; /* Removes the top border */
+    border-bottom: 1px solid #dee2e6 !important; /* Adds a bottom border with Bootstrap's default color */
+}
+
+.table > thead > tr:last-child > th {
+    border-bottom: none !important;
+}
+
 a:hover {
 	text-decoration: none;
 	color: inherit;
@@ -15,27 +28,99 @@ a:hover {
 }
 
 .selected-row {
-    background-color: #b0b3b5 !important; /* Choose a light color to indicate selection */
+  background-color: #b0b3b5 !important; /* Choose a light color to indicate selection */
+}
+
+.row-owner{
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 100;
+  font-size:17px;
+}
+
+.row-other-details{
+  color: #8C8C94;
+  font-family: 'Roboto Flex', sans-serif;
+  font-size:14px;
 }
 
 .property-label {
 	color: #1F618D;
-    font-weight: 600;
+  font-weight: 600;
 	padding-top: 20px;
 	font-size: 12px;
 }
 
+.property-labeltop {
+  color: #1F618D;
+  font-weight: 600;
+  padding-top: 10px;
+  font-size: 12px;
+}
+
 .label {
-    font-weight: 600;
+  font-weight: 600;
 	font-size: 12px;
 }
 
 .property-label-info {
 	font-weight: lighter;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 .bdr {
   border-radius: 3px;
   overflow: hidden;
 }
+
+.alert-fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1050; /* This z-index ensures the alert is over other common Bootstrap components */
+}
+
+.application-header {
+    background-color: #0874FC;
+    /*padding: 16px ;   assuming the base size for rem-calc is the standard 16px, but it could differ */
+    box-shadow: #004381 0px 0px 3px 0px;
+    padding-bottom: 16px;
+    background-position: 0 0;
+    position: relative;
+}
+
+.application-title {
+    align-self: center;
+    font-weight: 100;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 34px; /* 36 * 16px */
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 16px; /* 38 * 16px */
+    text-shadow: none;
+}
+
+.custom-div {
+    max-height: none !important;
+}
+
+.rights-detail-owner-title{
+  color: #1F618D;
+  font-family: 'arial';
+  font-weight: 300;
+  padding-top: 20px;
+  font-size: 30px;
+}
+
+.location-label {
+  color: #084C84;
+  font-weight: 600;
+  font-size: 19px;
+}
+
+.no-padding{
+  padding-left: 0;
+  padding-right: 0;
+}
+

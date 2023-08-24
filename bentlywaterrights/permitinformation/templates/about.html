@@ -1,7 +1,25 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
 <h1>About</h1>
+
+<div class="card text-center">
+  <div class="card-body">
+  	<div class="row">
+	    <div class="col-lg-3 no-padding" style="text-align:center;">
+			<img src="{% static 'permitinformation/images/people_eugene.jpeg' %}" class="rounded-circle" style="width: 150px;"
+			  alt="Avatar" />
+			</br>
+
+			<h5 style="text-align:center; padding-top: 10px;">Eugene Santos</h5>
+			<h6 class="text-secondary" style="text-align:center;">Creative & Technology Director</h6>
+		</div>
+		<div class="col-lg-9 no-padding" style="display: flex; justify-content: center; align-items: center; font-style: italic">
+		    <h5>"I like motorcycles"</h5>
+		</div>
+	</div>
+  </div>
+</div>
 
 {% endblock %}

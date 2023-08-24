@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
+    <div class="card" style="width: 20rem;">
+        <div class="card-body">
+            <h5 class="card-title text-center">Bently Enter Prizes</h5>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="inputUsername" class="col-form-label">Username</label>
+                    <input type="text" class="form-control" name="username" id="inputUsername">
+                </div>
+                <div class="mb-3">
+                    <label for="inputPassword3" class="col-form-label">Password</label>
+                    <input type="password" class="form-control" name="password" id="inputPassword3">
+                </div>
+                <div class="text-center mb-3">
+                    <input type="submit" value="Login" class="btn text-light rounded" style="background-color: #D4AC0D;">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<br/><br/>
+{% endblock %}

@@ -3,5 +3,39 @@
 {% block content %}
 
 <h1>Logbook</h1>
+<div class="bdr">
+  <table class="table col-lg-12 table-striped bordered">
+  	<thead class="thead-dark">
+    <tr>
+      <th scope="col-lg-1">Permit#</th>
+      <th scope="col-lg-1">User</th>
+      <th scope="col-lg-2">Field</th>
+      <th scope="col-lg-3">Old Value</th>
+      <th scope="col-lg-3">New Value</th>
+      <th scope="col-lg-2">Date Change</th>
+    </tr>
+    </thead>
+  </thead>
+    <tbody>
+    {% for log in logs %}
+      <tr class="">
+      	<th class="col-lg-1">{{ log.property.permit_num }}</th>
+      	<th class="col-lg-1">{{ log.user }}</th>
+      	<th class="col-lg-2">{{ log.field_name }}</th>
+      	<th class="col-lg-3">{{ log.old_value }}</th>
+      	<th class="col-lg-3">{{ log.new_value }}</th>
+      	<th class="col-lg-2">{{ log.changed_at|date:"F j, Y, P" }}</th>
+  	  </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+
+    <!--    Property: {{ log.property }},
+        User: {{ log.user }},
+        Field Name: {{ log.field_name }},
+        Old Value: {{ log.old_value }},
+        New Value: {{ log.new_value }},
+        Changed At: {{ log.changed_at|date:"F j, Y, P" }}-->
 
 {% endblock %}

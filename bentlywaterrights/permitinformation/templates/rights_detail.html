@@ -1,0 +1,415 @@
+{% extends 'base.html' %}
+
+{% block content %}
+</br>
+<div class="row">
+<div class="col-lg-9">
+	<div class="rights-detail-owner-title">{{ item.owner_of_record }}</div>
+	<div class="location-label">Lake Tahoe Basin</div>
+	<br/>
+
+<div class="col-lg-12 no-padding">
+    <div class="row">
+        <!-- First Column Group -->
+        <div class="col-lg-auto">
+            <div class="row">  <!-- Nested row for nested columns (Labels) -->
+                <div class="col-lg-5 location-label">Permit</div>
+
+            </div>
+            <div class="row">  <!-- Nested row for nested columns (Values) -->
+                <div class="col-lg-5">{{ item.permit_num }}</div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-auto">
+            <div class="row">  <!-- Nested row for nested columns (Labels) -->
+
+                <div class="col-lg-7 location-label">Cert/Status</div>
+            </div>
+            <div class="row">  <!-- Nested row for nested columns (Values) -->
+
+                <div class="col-lg-7">{{ item.cert_status }}</div>
+            </div>
+        </div>
+
+        <div class="col-lg-auto">
+            <div class="row">  <!-- Nested row for nested columns (Labels) -->
+
+                <div class="col-lg-12 location-label">Priority Date</div>
+            </div>
+            <div class="row">  <!-- Nested row for nested columns (Values) -->
+
+                <div class="col-lg-7">{{ item.priority_date|date:"m/d/Y" }}</div>
+            </div>
+        </div>
+
+        <div class="col-lg-auto">
+            <div class="row">  <!-- Nested row for nested columns (Labels) -->
+
+                <div class="col-lg-4 location-label">C.F.S.</div>
+            </div>
+            <div class="row">  <!-- Nested row for nested columns (Values) -->
+
+                <div class="col-lg-4">{{ item.cfs }}</div>
+            </div>
+        </div>
+
+        <div class="col-lg-auto">
+            <div class="row">  <!-- Nested row for nested columns (Labels) -->
+
+                <div class="col-lg-4 location-label">Duty</div>
+            </div>
+            <div class="row">  <!-- Nested row for nested columns (Values) -->
+
+                <div class="col-lg-4">{{ item.duty_af }}</div>
+            </div>
+        </div>
+
+        <div class="col-lg-auto">
+            <div class="row">  <!-- Nested row for nested columns (Labels) -->
+
+                <div class="col-lg-3 location-label">USE</div>
+            </div>
+            <div class="row">  <!-- Nested row for nested columns (Values) -->
+
+                <div class="col-lg-3">{{ item.use }}</div>
+            </div>
+        </div>
+
+        <div class="col-lg-auto">
+            <div class="row">  <!-- Nested row for nested columns (Labels) -->
+
+                <div class="col-lg-3 location-label">Remarks</div>
+            </div>
+            <div class="row">  <!-- Nested row for nested columns (Values) -->
+
+                <div class="col-lg-3">{{ item.remarks }}</div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+</br>
+<div class="col-lg-12 no-padding">
+    <div class="row">
+        <!-- First Column Group -->
+        <div class="col-lg-auto">
+            <div class="row">  <!-- Nested row for nested columns (Labels) -->
+                <div class="col-lg-12 location-label">POC Due</div>
+
+            </div>
+            <div class="row">  <!-- Nested row for nested columns (Values) -->
+                <div class="col-lg-12">{{ item.poc_due|date:"m/d/Y" }}</div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-auto">
+            <div class="row">  <!-- Nested row for nested columns (Labels) -->
+
+                <div class="col-lg-12 location-label">PBU Due</div>
+            </div>
+            <div class="row">  <!-- Nested row for nested columns (Values) -->
+
+                <div class="col-lg-12">{{ item.pbu_due|date:"m/d/Y" }}</div>
+            </div>
+        </div>
+
+        <div class="col-lg-auto">
+            <div class="row">  <!-- Nested row for nested columns (Labels) -->
+
+                <div class="col-lg-12 location-label">Source</div>
+            </div>
+            <div class="row">  <!-- Nested row for nested columns (Values) -->
+
+                <div class="col-lg-12">{{ item.source }}</div>
+            </div>
+        </div>
+
+        <div class="col-lg-auto">
+            <div class="row">  <!-- Nested row for nested columns (Labels) -->
+
+                <div class="col-lg-12 location-label">Source Description</div>
+            </div>
+            <div class="row">  <!-- Nested row for nested columns (Values) -->
+
+                <div class="col-lg-12">{{ item.source_description }}</div>
+            </div>
+        </div>
+
+        <div class="col-lg-auto">
+            <div class="row">  <!-- Nested row for nested columns (Labels) -->
+
+                <div class="col-lg-12 location-label">Sale Value</div>
+            </div>
+            <div class="row">  <!-- Nested row for nested columns (Values) -->
+
+                <div class="col-lg-12">{{ item.sale_value }}</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</br>
+
+<div class="col-lg-12 no-padding">
+    <div class="row">
+        <!-- First Column Group -->
+        <div class="col-lg-auto">
+            <div class="row">  <!-- Nested row for nested columns (Labels) -->
+                <div class="col-lg-12 location-label">Potentential Values</div>
+
+            </div>
+            <div class="row">  <!-- Nested row for nested columns (Values) -->
+                <div class="col-lg-12">{{ item.potential_values }}</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</br>
+
+<div class="col-lg-12 no-padding">
+    <div class="row">
+        <!-- First Column Group -->
+        <div class="col-lg-6">
+            <div class="row"> 
+                <div class="col-lg-12 location-label">Point of Diversion</div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-2">{{ item.pod_1 }}</div>
+                <div class="col-lg-2">{{ item.pod_2 }}</div>
+                <div class="col-lg-2">{{ item.pod_3 }}</div>
+                <div class="col-lg-2">{{ item.pod_4 }}</div>
+                <div class="col-lg-2">{{ item.pod_5 }}</div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="col-lg-12 location-label">Acres/Units</div>
+            </div>
+            <div class="row">
+			    {% if item.unit_acres %}
+			        <div class="col-lg-auto">{{ item.unit_acres }} acres</div>
+			    {% endif %}
+			    
+			    {% if item.unit_sheep > 0 %}
+			        <div class="col-lg-auto">{{ item.unit_sheep }} sheep</div>
+			    {% elif item.unit_lamb > 0 %}
+			        <div class="col-lg-auto">{{ item.unit_lamb }} lamb</div>
+			    {% endif %}
+
+			    {% if item.unit_cattle > 0 %}
+			        <div class="col-lg-auto">{{ item.unit_cattle }} cattle</div>
+			    {% endif %}
+			    {% if item.unit_horses > 0 %}
+			        <div class="col-lg-auto">{{ item.unit_horses }} horses</br></div>
+			    {% endif %}
+
+			    {% if item.unit_other and item.unit_other != 0 %}
+			        <div class="col-lg-auto">other: {{ item.unit_other }}</div>
+			    {% endif %}
+			</div>
+        </div>
+    </div>
+</div>
+
+</br>
+</div>
+
+
+<div class="col-lg-3" style="">
+    	<button type="button" class="btn text-light btn-lg btn-block rounded" data-toggle="modal" data-target="#exampleModal" style="background-color: #F0B40C; box-shadow: 0 4px 6px rgba(0, 0, 0, .3); text-align: left; padding-left: 15px;">
+	  		+ Add Rights
+		</button>
+		<br/>
+		<button type="button" class="btn text-light btn-lg btn-block rounded" data-toggle="modal" data-target="#editRightsModal" style="background-color: #d3d3d3; box-shadow: 0 4px 6px rgba(0, 0, 0, .3); text-align: left; padding-left: 15px;">
+	  		+ Edit Rights
+		</button>
+		<br/>
+	<div class="location-label">History</div>
+	{% for log in item.audit_logs.all %}
+    <div>
+        {{ log.field_name }}: {{ log.user.username|default:"No User" }} - 
+        <!-- (Old Value: {{ log.old_value }} -> New Value: {{ log.new_value }}) -->
+        {{ log.changed_at|date:"m/d/Y" }}
+    </div>
+{% endfor %}
+
+</div>
+
+</div>
+
+<!-- Edit Modal -->
+<div class="modal fade" id="editRightsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header text-white bg-dark">
+        <h3 class="modal-title" id="exampleModalLabel">Edit Rights</h3>
+        <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body bg-light">
+
+      	<!-- Form -->
+      	<form action="{% url 'getPropertyDetails' item.id %}" method="POST">
+      		{% csrf_token %}
+      	  <h3 class="text-dark">Water Rights Information</h3>
+
+      	  <!-- ROW 1 -->
+      	  <div class="form-row">
+		    <div class="form-group text-secondary col-lg-3">
+		      <label for="inputBasin">Basin</label>
+		      <select id="inputBasin" class="form-control" name="basin">
+			    <option {% if not item.basin %}selected{% endif %}>Choose...</option>
+			    <option {% if item.basin == "Lake Tahoe Basin (90)" %}selected{% endif %}>Lake Tahoe Basin (90)</option>
+			    <option {% if item.basin == "Dayton Valley (103)" %}selected{% endif %}>Dayton Valley (103)</option>
+			    <option {% if item.basin == "Carson Valley (105)" %}selected{% endif %}>Carson Valley (105)</option>
+			    <option {% if item.basin == "Antelope Valley (106)" %}selected{% endif %}>Antelope Valley (106)</option>
+			</select>
+		    </div>
+		    <div class="form-group text-secondary col-lg-3">
+		      <label for="inputOwner">Owner of Record</label>
+		      <input type="text" class="form-control" id="inputOwner" value="{{ item.owner_of_record|default:'' }}" name="owner_of_record">
+		    </div>
+		    <div class="form-group text-secondary col-lg-3">
+		      <label for="inputPermitNum">Permit Number</label>
+		      <input type="text" class="form-control" id="inputPermitNum" value="{{ item.permit_num|default:'' }}" name="permit_num">
+		    </div>
+		    <div class="form-group text-secondary col-lg-3">
+		      <label for="inputCert">Certification/Status</label>
+		      <input type="text" class="form-control" id="inputCert" value="{{ item.cert_status|default:'' }}" name="cert_status">
+		    </div>
+		  </div>
+
+		  <!-- ROW 2 -->
+		  <div class="form-row">
+		    <div class="form-group text-secondary col-lg-3">
+		      <label for="inputPriorityDate">Priority Date</label>
+		      <input type="date" class="form-control" id="inputPriorityDate" value="{{ item.priority_date|date:'Y-m-d' }}" name="priority_date">
+		    </div>
+		    <div class="form-group text-secondary col-lg-2">
+		      <label for="inputCFS">C.F.S.</label>
+		      <input type="text" class="form-control" id="inputCFS" value="{{ item.cfs|default:'' }}" name="cfs">
+		    </div>
+		    <div class="form-group text-secondary col-lg-2">
+		      <label for="inputDuty">Duty (AF)</label>
+		      <input type="text" class="form-control" id="inputDuty" value="{{ item.duty_af|default:'' }}" name="duty_af">
+		    </div>
+		    <div class="form-group text-secondary col-lg-2">
+		      <label for="inputUse">Use</label>
+		      <input type="text" class="form-control" id="inputUse" value="{{ item.use|default:'' }}" name="use">
+		    </div>
+		    <div class="form-group text-secondary col-lg-3">
+		      <label for="inputRemarks">Remarks</label>
+		      <input type="text" class="form-control" id="inputRemarks" value="{{ item.remarks|default:'' }}" name="remarks">
+		    </div>
+		  </div>
+
+		  <div class="form-row">
+		    <div class="form-group text-secondary col-md-3">
+		      <label for="inputPOCDue">POC Due</label>
+		      <input type="date" class="form-control" id="inputPOCDue" value="{{ item.poc_due|date:'Y-m-d' }}" name="poc_due">
+		    </div>
+		    <div class="form-group text-secondary col-md-3">
+		      <label for="inputPBUDue">PBU Due</label>
+		      <input type="date" class="form-control" id="inputPBUDue" value="{{ item.pbu_due|date:'Y-m-d' }}" name="pbu_due">
+		    </div>
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputSource">Source</label>
+		      <input type="text" class="form-control" id="inputSource" value="{{ item.source|default:'' }}" name="source">
+		    </div>
+		    <div class="form-group text-secondary col-md-4">
+		      <label for="inputSourceDesc">Source Description</label>
+		      <input type="text" class="form-control" id="inputSourceDesc" value="{{ item.source_description|default:'' }}" name="source_description">
+		    </div>
+		  </div>
+
+		  <div class="form-row">
+		    <div class="form-group text-secondary col-lg-12">
+		      <label for="inputSaleValue">Sale Value</label>
+		      <input type="text" class="form-control" id="inputSaleValue" value="{{ item.sale_value|default:'' }}" name="sale_value">
+		    </div>
+		  </div>
+
+		  <div class="form-row">
+		    <div class="form-group text-secondary col-lg-12">
+		      <label for="inputPotVal">Potential Values</label>
+		      <input type="text" class="form-control" id="inputPotVal" value="{{ item.potential_values|default:'' }}" name="potential_values">
+		    </div>
+		  </div>
+
+		  <br/>
+		  <h3 class="text-dark">Point of Diversion</h3>
+		  <div class="form-row">
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputPod1">1/4</label>
+		      <input type="text" class="form-control" id="inputPod1" value="{{ item.pod_1|default:'' }}" name="pod_1">
+		    </div>
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputPod2">1/4</label>
+		      <input type="text" class="form-control" id="inputPod2" value="{{ item.pod_2|default:'' }}" name="pod_2">
+		    </div>
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputPod3">S</label>
+		      <input type="text" class="form-control" id="inputPod3" value="{{ item.pod_3|default:'' }}" name="pod_3">
+		    </div>
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputPod4">T(N)</label>
+		      <input type="text" class="form-control" id="inputPod4" value="{{ item.pod_4|default:'' }}" name="pod_4">
+		    </div>
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputPod5">R</label>
+		      <input type="text" class="form-control" id="inputPod5" value="{{ item.pod_5|default:'' }}" name="pod_5">
+		    </div>
+		  </div>
+		  <br/>
+		  <h3 class="text-dark">Acres/Units</h3>
+		  <div class="form-row">
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputAcres">Acres</label>
+		      <input type="text" class="form-control" id="inputAcres" value="{{ item.unit_acres|default:'' }}" name="unit_acres">
+		    </div>
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputSheep">Sheep</label>
+		      <input type="number" class="form-control" id="inputSheep" value="{{ item.unit_sheep }}" name="unit_sheep">
+		    </div>
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputLamb">Lamb</label>
+		      <input type="number" class="form-control" id="inputLamb" value="{{ item.unit_lamb }}" name="unit_lamb">
+		    </div>
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputCattle">Cattle</label>
+		      <input type="number" class="form-control" id="inputCattle" value="{{ item.unit_cattle }}" name="unit_cattle">
+		    </div>
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputHorses">Horses</label>
+		      <input type="number" class="form-control" id="inputHorses" value="{{ item.unit_horses }}" name="unit_horses">
+		    </div>
+		    <div class="form-group text-secondary col-md-2">
+		      <label for="inputOther">Other</label>
+		      <input type="text" class="form-control" id="inputOther" value="{{ item.unit_other|default:'' }}" name="unit_other">
+		    </div>
+		  </div>
+
+
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button class="btn text-light" type="submit" style="background-color: #D4AC0D;">Apply Changes</button>
+	      </div>
+      	</form>
+
+
+      </div>
+    </div>
+  </div>
+ </div>
+{% endblock %}
