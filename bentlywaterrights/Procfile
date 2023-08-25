@@ -1,0 +1,1 @@
+web: gunicorn bentlywaterrights.bentlywaterrights.wsgi:application --log-file -
