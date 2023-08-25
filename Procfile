@@ -1,1 +1,1 @@
-web: gunicorn bentlywaterrights.wsgi
+web: gunicorn bentlywaterrights.bentlywaterrights.wsgi
