@@ -13,10 +13,7 @@ def home(request):
 
 		if form.is_valid():
 			property_instance = form.save(commit=False)
-			if request.user.is_authenticated:
-				property_instance.user = request.user
-			else:
-				property_instance.user = None
+			property_instance.user = request.user if request.user.is_authenticated else None
 			property_instance.save()
 
 			messages.success(request, ("Property has been added"))

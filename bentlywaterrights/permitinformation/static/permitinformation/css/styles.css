@@ -125,3 +125,9 @@ a:hover {
   padding-right: 0;
 }
 
+.row-owner {
+    width: 70%; 
+}
+.row-other-details {
+    width: 13.33%;
+}

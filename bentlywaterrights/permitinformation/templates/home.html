@@ -6,8 +6,6 @@
 <div class="col-md-9" style="">
   <br/>
 
-
-
   <!-- PROPERTY LIST TABLE -->
   <div class="location-label">Lake Tahoe Basin</div>
 
@@ -17,10 +15,10 @@
     {% for item in ticker %}
     {% if item.basin == 'Lake Tahoe Basin (90)' %}
       <tr class="clickable-row" data-href="{% url 'getPropertyDetails' item.id %}">
-      	<th class="col-9 row-owner">{{ item.owner_of_record }}</th>
-        <th class="col-1 row-other-details">{{ item.permit_num }}</th>
-        <th class="col-1 row-other-details">{{ item.cert_status }}</th>
-        <th class="col-1 row-other-details">{{ item.priority_date|date:"m/d/Y" }}</th>
+      	<th class="col-md-9 row-owner">{{ item.owner_of_record }}</th>
+        <th class="col-md-1 row-other-details">{{ item.permit_num }}</th>
+        <th class="col-md-1 row-other-details">{{ item.cert_status }}</th>
+        <th class="col-md-1 row-other-details">{{ item.priority_date|date:"m/d/Y" }}</th>
       </tr>
     {% endif %}
     {% endfor %}
@@ -28,18 +26,18 @@
   </table>
   </div>
 
-  <div class="location-label">Dayton Valley</div>
 
+  <div class="location-label">Dayton Valley</div>
   <div class="bdr">
   <table class="table table-hover table-borderless table-sm">
     <tbody>
     {% for item in ticker %}
     {% if item.basin == 'Dayton Valley (103)' %}
       <tr class="clickable-row" data-href="{% url 'getPropertyDetails' item.id %}">
-      	<th class="col-9 row-owner">{{ item.owner_of_record }}</th>
-        <th class="col-1 row-other-details">{{ item.permit_num }}</th>
-        <th class="col-1 row-other-details">{{ item.cert_status }}</th>
-        <th class="col-1 row-other-details">{{ item.priority_date|date:"m/d/Y" }}</th>
+      	<th class="col-md-9 row-owner">{{ item.owner_of_record }}</th>
+        <th class="col-md-1 row-other-details">{{ item.permit_num }}</th>
+        <th class="col-md-1 row-other-details">{{ item.cert_status }}</th>
+        <th class="col-md-1 row-other-details">{{ item.priority_date|date:"m/d/Y" }}</th>
       </tr>
     {% endif %}
     {% endfor %}
@@ -47,18 +45,19 @@
   </table>
   </div>
 
+
+
   <div class="location-label">Carson Valley</div>
   <div class="bdr">
-
   <table class="table table-hover table-borderless table-sm">
     <tbody>
     {% for item in ticker %}
     {% if item.basin == 'Carson Valley (105)' %}
       <tr class="clickable-row" data-href="{% url 'getPropertyDetails' item.id %}">
-      	<th class="col-9 row-owner">{{ item.owner_of_record }}</th>
-        <th class="col-1 row-other-details">{{ item.permit_num }}</th>
-        <th class="col-1 row-other-details">{{ item.cert_status }}</th>
-        <th class="col-1 row-other-details">{{ item.priority_date|date:"m/d/Y" }}</th>
+      	<th class="col-md-9 row-owner">{{ item.owner_of_record }}</th>
+        <th class="col-md-1 row-other-details">{{ item.permit_num }}</th>
+        <th class="col-md-1 row-other-details">{{ item.cert_status }}</th>
+        <th class="col-md-1 row-other-details">{{ item.priority_date|date:"m/d/Y" }}</th>
       </tr>
     {% endif %}
     {% endfor %}
@@ -66,18 +65,19 @@
   </table>
   </div>
 
+
+
   <div class="location-label">Antelope Valley</div>
   <div class="bdr">
-
   <table class="table table-hover table-borderless table-sm">
     <tbody>
     {% for item in ticker %}
     {% if item.basin == 'Antelope Valley (106)' %}
       <tr class="clickable-row" data-href="{% url 'getPropertyDetails' item.id %}">
-      	<th class="col-9 row-owner">{{ item.owner_of_record }}</th>
-        <th class="col-1 row-other-details">{{ item.permit_num }}</th>
-        <th class="col-1 row-other-details">{{ item.cert_status }}</th>
-        <th class="col-1 row-other-details">{{ item.priority_date|date:"m/d/Y" }}</th>
+      	<th class="col-md-9 row-owner">{{ item.owner_of_record }}</th>
+        <th class="col-md-1 row-other-details">{{ item.permit_num }}</th>
+        <th class="col-md-1 row-other-details">{{ item.cert_status }}</th>
+        <th class="col-md-1 row-other-details">{{ item.priority_date|date:"m/d/Y" }}</th>
       </tr>
     {% endif %}
     {% endfor %}
@@ -130,83 +130,65 @@
       	  <!-- ROW 1 -->
       	  <div class="form-row">
 		    <div class="form-group text-secondary col-lg-3">
-		      <label for="inputBasin">Basin</label>
-		      <select id="inputBasin" class="form-control" name="basin">
-		        <option selected>Choose...</option>
-		        <option>Lake Tahoe Basin (90)</option>
-		        <option>Dayton Valley (103)</option>
-		        <option>Carson Valley (105)</option>
-		        <option>Antelope Valley (106)</option>
-		      </select>
+				{{ form.basin.label_tag }} {{ form.basin }}
+				{{ form.basin.errors }}
 		    </div>
 		    <div class="form-group text-secondary col-lg-3">
-		      <label for="inputOwner">Owner of Record</label>
-		      <input type="text" class="form-control" id="inputOwner" maxlength="50" name="owner_of_record">
+		      {{ form.owner_of_record.label_tag }} {{ form.owner_of_record }}
+		      {{ form.owner_of_record.errors }}
 		    </div>
 		    <div class="form-group text-secondary col-lg-3">
 		      <label for="inputPermitNum">Permit Number</label>
-		      <input type="text" class="form-control" id="inputPermitNum" maxlength="20" name="permit_num">
+		      {{ form.permit_num.label_tag }} {{ form.permit_num }}
 		    </div>
 		    <div class="form-group text-secondary col-lg-3">
-		      <label for="inputCert">Certification/Status</label>
-		      <input type="text" class="form-control" id="inputCert" maxlength="20" name="cert_status">
+		      {{ form.cert_status.label_tag }} {{ form.cert_status }}
 		    </div>
 		  </div>
 
 		  <!-- ROW 2 -->
 		  <div class="form-row">
 		    <div class="form-group text-secondary col-lg-3">
-		      <label for="inputPriorityDate">Priority Date</label>
-		      <input type="date" class="form-control" id="inputPriorityDate" name="priority_date">
-		    </div>
-		    <div class="form-group text-secondary col-lg-2">
-		      <label for="inputCFS">C.F.S.</label>
-		      <input type="text" class="form-control" id="inputCFS" maxlength="20" name="cfs">
-		    </div>
-		    <div class="form-group text-secondary col-lg-2">
-		      <label for="inputDuty">Duty (AF)</label>
-		      <input type="text" class="form-control" id="inputDuty" maxlength="20" name="duty_af">
-		    </div>
-		    <div class="form-group text-secondary col-lg-2">
-		      <label for="inputUse">Use</label>
-		      <input type="text" class="form-control" id="inputUse" maxlength="10" name="use">
-		    </div>
-		    <div class="form-group text-secondary col-lg-3">
-		      <label for="inputRemarks">Remarks</label>
-		      <input type="text" class="form-control" id="inputRemarks" maxlength="150" name="remarks">
-		    </div>
+			    {{ form.priority_date.label_tag }} {{ form.priority_date }}
+			</div>
+			<div class="form-group text-secondary col-lg-2">
+			    {{ form.cfs.label_tag }} {{ form.cfs }}
+			</div>
+			<div class="form-group text-secondary col-lg-2">
+			    {{ form.duty_af.label_tag }} {{ form.duty_af }}
+			</div>
+			<div class="form-group text-secondary col-lg-2">
+			    {{ form.use.label_tag }} {{ form.use }}
+			</div>
+			<div class="form-group text-secondary col-lg-3">
+			    {{ form.remarks.label_tag }} {{ form.remarks }}
+			</div>
 		  </div>
 
 		  <div class="form-row">
 		    <div class="form-group text-secondary col-md-3">
-		      <label for="inputPOCDue">POC Due</label>
-		      <input type="date" class="form-control" id="inputPOCDue" name="poc_due">
-		    </div>
-		    <div class="form-group text-secondary col-md-3">
-		      <label for="inputPBUDue">PBU Due</label>
-		      <input type="date" class="form-control" id="inputPBUDue" name="pbu_due">
-		    </div>
-		    <div class="form-group text-secondary col-md-2">
-		      <label for="inputSource">Source</label>
-		      <input type="text" class="form-control" id="inputSource" maxlength="10" name="source">
-		    </div>
-		    <div class="form-group text-secondary col-md-4">
-		      <label for="inputSourceDesc">Source Description</label>
-		      <input type="text" class="form-control" id="inputSourceDesc" maxlength="50" name="source_description">
+			    {{ form.poc_due.label_tag }} {{ form.poc_due }}
+			</div>
+			<div class="form-group text-secondary col-md-3">
+			    {{ form.pbu_due.label_tag }} {{ form.pbu_due }}
+			</div>
+			<div class="form-group text-secondary col-md-2">
+			    {{ form.source.label_tag }} {{ form.source }}
+			</div>
+			<div class="form-group text-secondary col-md-4">
+			    {{ form.source_description.label_tag }} {{ form.source_description }}
+			</div>
+		  </div>
+
+		  <div class="form-row">
+		    <div class="form-group text-secondary col-lg-12">
+		      {{ form.sale_value.label_tag }} {{ form.sale_value }}
 		    </div>
 		  </div>
 
 		  <div class="form-row">
 		    <div class="form-group text-secondary col-lg-12">
-		      <label for="inputSaleValue">Sale Value</label>
-		      <input type="text" class="form-control" id="inputSaleValue" maxlength="150" name="sale_value">
-		    </div>
-		  </div>
-
-		  <div class="form-row">
-		    <div class="form-group text-secondary col-lg-12">
-		      <label for="inputPotVal">Potential Values</label>
-		      <input type="text" class="form-control" id="inputPotVal" maxlength="150" name="potential_values">
+		      {{ form.potential_values.label_tag }} {{ form.potential_values }}
 		    </div>
 		  </div>
 
@@ -214,52 +196,41 @@
 		  <h3 class="text-dark">Point of Diversion</h3>
 		  <div class="form-row">
 		    <div class="form-group text-secondary col-md-2">
-		      <label for="inputPod1">1/4</label>
-		      <input type="text" class="form-control" id="inputPod1" maxlength="10" name="pod_1">
+		      {{ form.pod_1.label_tag }} {{ form.pod_1 }}
 		    </div>
 		    <div class="form-group text-secondary col-md-2">
-		      <label for="inputPod2">1/4</label>
-		      <input type="text" class="form-control" id="inputPod2" maxlength="10" name="pod_2">
+		      {{ form.pod_2.label_tag }} {{ form.pod_2 }}
 		    </div>
 		    <div class="form-group text-secondary col-md-2">
-		      <label for="inputPod3">S</label>
-		      <input type="text" class="form-control" id="inputPod3" maxlength="10" name="pod_3">
+		      {{ form.pod_3.label_tag }} {{ form.pod_3 }}
 		    </div>
 		    <div class="form-group text-secondary col-md-2">
-		      <label for="inputPod4">T(N)</label>
-		      <input type="text" class="form-control" id="inputPod4" maxlength="10" name="pod_4">
+		      {{ form.pod_4.label_tag }} {{ form.pod_4 }}
 		    </div>
 		    <div class="form-group text-secondary col-md-2">
-		      <label for="inputPod5">R</label>
-		      <input type="text" class="form-control" id="inputPod5" maxlength="10" name="pod_5">
+		      {{ form.pod_5.label_tag }} {{ form.pod_5 }}
 		    </div>
 		  </div>
 		  <br/>
 		  <h3 class="text-dark">Acres/Units</h3>
 		  <div class="form-row">
 		    <div class="form-group text-secondary col-md-2">
-		      <label for="inputAcres">Acres</label>
-		      <input type="text" class="form-control" id="inputAcres" name="unit_acres">
+		      {{ form.unit_acres.label_tag }} {{ form.unit_acres }}
 		    </div>
 		    <div class="form-group text-secondary col-md-2">
-		      <label for="inputSheep">Sheep</label>
-		      <input type="number" class="form-control" id="inputSheep" name="unit_sheep">
+		      {{ form.unit_sheep.label_tag }} {{ form.unit_sheep }}
 		    </div>
 		    <div class="form-group text-secondary col-md-2">
-		      <label for="inputLamb">Lamb</label>
-		      <input type="number" class="form-control" id="inputLamb" name="unit_lamb">
+		      {{ form.unit_lamb.label_tag }} {{ form.unit_lamb }}
 		    </div>
 		    <div class="form-group text-secondary col-md-2">
-		      <label for="inputCattle">Cattle</label>
-		      <input type="number" class="form-control" id="inputCattle" name="unit_cattle">
+		      {{ form.unit_cattle.label_tag }} {{ form.unit_cattle }}
 		    </div>
 		    <div class="form-group text-secondary col-md-2">
-		      <label for="inputHorses">Horses</label>
-		      <input type="number" class="form-control" id="inputHorses" name="unit_horses">
+		      {{ form.unit_horses.label_tag }} {{ form.unit_horses }}
 		    </div>
 		    <div class="form-group text-secondary col-md-2">
-		      <label for="inputOther">Other</label>
-		      <input type="text" class="form-control" id="inputOther" name="unit_other">
+		      {{ form.unit_other.label_tag }} {{ form.unit_other }}
 		    </div>
 		  </div>
 
