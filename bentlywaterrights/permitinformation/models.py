@@ -4,7 +4,7 @@ from django.dispatch import receiver
 from django.contrib.auth.models import User
 from django.contrib import admin
 
-# Create your models here.
+
 class Property(models.Model):
 	basin = models.CharField('Basin', max_length=50)
 	owner_of_record = models.CharField('Owner of Record', max_length=50)
@@ -48,21 +48,6 @@ class Property(models.Model):
 	class Meta:
 		verbose_name_plural = "Properties"
 
-	#def save(self, *args, **kwargs):
-	#	if self.pk: # Check if this instance already exists in the database
-	#		orig = Property.objects.get(pk=self.pk)
-	#		for field in self._meta.fields:
-	#			orig_value = getattr(orig, field.name)
-	#			new_value = getattr(self, field.name)
-	#			if orig_value != new_value:
-	#				AuditLog.objects.create(
-	#					property=self,
-	#					user=User.objects.first(), # Replace with the actual user making the change
-	#					field_name=field.name,
-	#					old_value=orig_value,
-	#					new_value=new_value
-	#					)
-	#	super(Property, self).save(*args, **kwargs)
 
 class AuditLog(models.Model):
 	property = models.ForeignKey(Property, on_delete=models.CASCADE, related_name='audit_logs')

@@ -12,7 +12,7 @@
   <div class="bdr">
   <table class="table table-hover table-borderless table-sm">
     <tbody>
-    {% for item in ticker %}
+    {% for item in propertyListing %}
     {% if item.basin == 'Lake Tahoe Basin (90)' %}
       <tr class="clickable-row" data-href="{% url 'getPropertyDetails' item.id %}">
       	<th class="col-md-9 row-owner">{{ item.owner_of_record }}</th>
@@ -31,7 +31,7 @@
   <div class="bdr">
   <table class="table table-hover table-borderless table-sm">
     <tbody>
-    {% for item in ticker %}
+    {% for item in propertyListing %}
     {% if item.basin == 'Dayton Valley (103)' %}
       <tr class="clickable-row" data-href="{% url 'getPropertyDetails' item.id %}">
       	<th class="col-md-9 row-owner">{{ item.owner_of_record }}</th>
@@ -51,7 +51,7 @@
   <div class="bdr">
   <table class="table table-hover table-borderless table-sm">
     <tbody>
-    {% for item in ticker %}
+    {% for item in propertyListing %}
     {% if item.basin == 'Carson Valley (105)' %}
       <tr class="clickable-row" data-href="{% url 'getPropertyDetails' item.id %}">
       	<th class="col-md-9 row-owner">{{ item.owner_of_record }}</th>
@@ -71,7 +71,7 @@
   <div class="bdr">
   <table class="table table-hover table-borderless table-sm">
     <tbody>
-    {% for item in ticker %}
+    {% for item in propertyListing %}
     {% if item.basin == 'Antelope Valley (106)' %}
       <tr class="clickable-row" data-href="{% url 'getPropertyDetails' item.id %}">
       	<th class="col-md-9 row-owner">{{ item.owner_of_record }}</th>

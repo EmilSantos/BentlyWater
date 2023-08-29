@@ -125,6 +125,7 @@ a:hover {
   padding-right: 0;
 }
 
+/* To make columns the same size when on mobile */
 .row-owner {
     width: 70%; 
 }
