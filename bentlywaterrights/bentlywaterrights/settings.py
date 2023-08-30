@@ -58,7 +58,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.config(default='postgres://wgcjozuicwyvca:cb33f8db4e5726143046e91a22eb2ade728ed93529c5e1d1a8ff86cb68c13a15@ec2-44-212-250-48.compute-1.amazonaws.com:5432/deiaps0u2dac67')
+DATABASES['default'] = dj_database_url.config(default='')
 
 AUTH_PASSWORD_VALIDATORS = [
     {
